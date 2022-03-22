@@ -1,0 +1,68 @@
+<div class="container mt-5">
+    <div class="card shadow-lg p-1 mb-5">
+        <h5 class="card-header">Busqueda de alumnos</h5>
+        <div class="card-body">
+            <h5 class="card-title">Ingrese el numero de control:</h5>
+            <form class="mb-2" novalidate [formGroup]="formulario">
+                <div class="input-group mb-3">
+                    <span class="input-group-text">N.Control</span>
+                    <input type="text" class="form-control" placeholder="ejemplo: 181020163" aria-label="Server" formControlName="no_control"/>
+                </div>
+                <button (click)="buscar()" class="btn btn-primary" type="submit" [disabled]="!formulario.valid">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <div *ngIf="res != null" class="shadow-lg p-1 mb-5 card">
+        <form class="mb-2" novalidate [formGroup]="formulario2">
+            <div class="input-group mb-3">
+                <span class="input-group-text">Numero de Control:</span>
+                <input type="text" class="form-control" placeholder="181020163" aria-label="Username"
+                    aria-describedby="basic-addon1" formControlName="no_control2" />
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Nombre:</span>
+                <input type="text" class="form-control" placeholder="Ángel de Jesús" aria-label="Username"
+                    aria-describedby="basic-addon1" formControlName="nombre"/>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Apellidos:</span>
+                <input type="text" class="form-control" placeholder="Pestaña Sánchez" aria-label="Username"
+                    aria-describedby="basic-addon1" formControlName="apellidos"/>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Fecha de Nacimiento:</span>
+                <input type="text" class="form-control" placeholder="yyyy-mm-dd" aria-label="Username"
+                    aria-describedby="basic-addon1" formControlName="fecha_nacimiento"/>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Semestre Actual:</span>
+                <input type="number" class="form-control" placeholder="8" aria-label="Username"
+                    aria-describedby="basic-addon1" formControlName="semestre_actual"/>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Carrera:</span>
+                <input type="text" class="form-control"
+                    placeholder="Ing. Tecnologias de la Informacion y Comunicaciones TIC'S" aria-label="Username"
+                    aria-describedby="basic-addon1" formControlName="carrera"/>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Edad:</span>
+                <input type="number" class="form-control" placeholder="21" aria-label="Username"
+                    aria-describedby="basic-addon1" formControlName="edad"/>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text">Especialidad</span>
+                <textarea class="form-control" aria-label="With textarea" placeholder="Programación" formControlName="especialidad"></textarea>
+            </div>
+        </form>
+    </div>
+</div>
